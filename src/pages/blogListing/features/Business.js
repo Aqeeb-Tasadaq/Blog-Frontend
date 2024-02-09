@@ -6,7 +6,7 @@ const Business = () => {
     const [blogs, setBlogs] = useState(null);
     useEffect(() => {
       axios
-        .get(`http://localhost:4000/get_blogType?blogType=business`)
+        .get(`https://react-backend-mocha.vercel.app/get_blogType?blogType=business`)
         //  axios.get('http://mern-801-backend.vercel.app/get_blogs')
         .then(function (response) {
           console.log("All data", response);
