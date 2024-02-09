@@ -10,7 +10,7 @@ const SinglePost = () => {
   const [blogs, setBlogs]= useState(null)
 
   useEffect(()=>{
-    axios.get(`http://localhost:4000/get_blogs/${param.id}`)
+    axios.get(`https://react-backend-mocha.vercel.app/get_blogs/${param.id}`)
    .then(function(response){
      console.log("All data", response)
      setBlogs(response?.data)
