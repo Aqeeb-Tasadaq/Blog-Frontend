@@ -12,7 +12,7 @@ const HomePage = () => {
   console.log(param.id)
 
   useEffect(()=>{
-    axios.get(`http://localhost:4000/${param.id}`)
+    axios.get(`https://react-backend-mocha.vercel.app/${param.id}`)
    .then(function(response){
      console.log("All data", response)
      setUser(response?.data)
