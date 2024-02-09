@@ -6,8 +6,8 @@ const Others = () => {
     const [blogs, setBlogs] = useState(null);
     useEffect(() => {
       axios
-        .get(`https://react-backend-mocha.vercel.app/get_blogType?blogType=others`)
-        //  axios.get('http://mern-801-backend.vercel.app/get_blogs')
+        .get(`server-nine-lyart-55.vercel.app/get_blogType?blogType=others`)
+      
         .then(function (response) {
           console.log("All data", response);
           setBlogs(response?.data);

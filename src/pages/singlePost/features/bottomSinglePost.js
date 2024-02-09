@@ -4,7 +4,7 @@ import parse from 'html-react-parser';
 
 const BottomSinglePost = ({blogs}) => {
   let img;
-  {blogs?.image? img=`http://localhost:4000/images/${blogs?.image}`: img=singlePost1  }
+  {blogs?.image? img=`server-nine-lyart-55.vercel.app/images/${blogs?.image}`: img=singlePost1  }
 
   
 

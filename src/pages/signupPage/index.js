@@ -19,8 +19,9 @@ const SignUpPage = () => {
     formData.append("last_name", last_name);
     formData.append("email", email);
     formData.append("password", password);
-
-    axios.post("https://react-backend-mocha.vercel.app/create_user", formData)
+    
+    // http://localhost:4000/create_user
+    axios.post("server-nine-lyart-55.vercel.app/create_user", formData)
       .then(function (res) {
          alert(res.data.msg);
         //const id = res.data.userData._id;
@@ -38,14 +39,14 @@ const SignUpPage = () => {
       <div className="container">
         <div className="form-container">
           <h2>Sign up for Your Blog</h2>
-          <label>First Name::</label>
+          <label>First Name:</label>
           <input
             type="text"
             value={first_name}
             placeholder="First Name"
             onChange={(e) => setfirst_name(e.target.value)}
           />
-          <label>Last Name::</label>
+          <label>Last Name:</label>
           <input
             type="text"
             value={last_name}
