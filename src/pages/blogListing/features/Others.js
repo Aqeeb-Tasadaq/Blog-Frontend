@@ -6,7 +6,7 @@ const Others = () => {
     const [blogs, setBlogs] = useState(null);
     useEffect(() => {
       axios
-        .get(`server-nine-lyart-55.vercel.app/get_blogType?blogType=others`)
+        .get(`https://server-nine-lyart-55.vercel.app/get_blogType?blogType=others`)
       
         .then(function (response) {
           console.log("All data", response);

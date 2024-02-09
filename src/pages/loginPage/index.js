@@ -22,7 +22,7 @@ const LoginPage = () => {
 
   const UserLogin = () => {
     axios
-      .post("server-nine-lyart-55.vercel.app/login_user", userData)
+      .post("https://server-nine-lyart-55.vercel.app/login_user", userData)
       .then(function (res) {
         // alert(res.data.userData._id);
         const id = res.data.userData._id;

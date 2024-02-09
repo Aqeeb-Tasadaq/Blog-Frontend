@@ -23,7 +23,7 @@ const CreateBlog = () => {
     formData.append("selectedDate", selectedDate.toLocaleDateString());
 
   const submitBlogFrom = () => {
-      axios.post('server-nine-lyart-55.vercel.app/create_blog', formData)
+      axios.post('https://server-nine-lyart-55.vercel.app/create_blog', formData)
           .then(function (response) {
               console.log(response);
               alert("Blog save Successfully")
