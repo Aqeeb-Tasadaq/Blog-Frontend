@@ -22,7 +22,7 @@ const LoginPage = () => {
 
   const UserLogin = () => {
     axios
-      .post("https://react-backend-mocha.vercel.app/login_user", userData)
+      .post("http://localhost:3000/login_user", userData)
       .then(function (res) {
         // alert(res.data.userData._id);
         const id = res.data.userData._id;
