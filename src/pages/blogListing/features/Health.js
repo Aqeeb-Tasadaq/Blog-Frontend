@@ -6,7 +6,7 @@ const Health = () => {
     const [blogs, setBlogs] = useState(null);
     useEffect(() => {
         // axios.get(`http://localhost:4000/get_blogType?blogType=health`)
-          axios.get('https://server-nine-lyart-55.vercel.app/get_blogs')
+          axios.get('http://localhost:4000/get_blogs')
         .then(function (response) {
           console.log("All data", response);
           setBlogs(response?.data);

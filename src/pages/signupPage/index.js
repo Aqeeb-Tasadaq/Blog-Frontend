@@ -21,7 +21,7 @@ const SignUpPage = () => {
     formData.append("password", password);
     
     // http://localhost:4000/create_user
-    axios.post("https://server-nine-lyart-55.vercel.app/create_user", formData)
+    axios.post("http://localhost:4000/create_user", formData)
       .then(function (res) {
          alert(res.data.msg);
         //const id = res.data.userData._id;

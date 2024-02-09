@@ -7,7 +7,7 @@ const Posts = () => {
   const [blogs, setBlogs] = useState(null);
   useEffect(() => {
     axios
-      .get("https://server-nine-lyart-55.vercel.app/get_blogs")
+      .get("http://localhost:4000/get_blogs")
       .then(function (response) {
         console.log("All data", response);
         setBlogs(response?.data);
