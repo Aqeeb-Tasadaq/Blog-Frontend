@@ -23,7 +23,7 @@ const CreateBlog = () => {
     formData.append("selectedDate", selectedDate.toLocaleDateString());
 
   const submitBlogFrom = () => {
-      axios.post('http://localhost:4000/create_blog', formData)
+      axios.post('https://react-backend-mocha.vercel.app/create_blog', formData)
           .then(function (response) {
               console.log(response);
               alert("Blog save Successfully")
