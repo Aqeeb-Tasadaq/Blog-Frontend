@@ -20,7 +20,7 @@ const SignUpPage = () => {
     formData.append("email", email);
     formData.append("password", password);
 
-    axios.post("http://localhost:4000/create_user", formData)
+    axios.post("https://react-backend-mocha.vercel.app/create_user", formData)
       .then(function (res) {
          alert(res.data.msg);
         //const id = res.data.userData._id;
