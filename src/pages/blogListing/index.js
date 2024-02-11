@@ -18,7 +18,7 @@ const BlogListing = () => {
   };
   
   return (
-    <Layout>
+    <div>
       <Title/>
 
         <div>
@@ -58,7 +58,7 @@ const BlogListing = () => {
     <BlogBanner/>
     <Posts/>
     <Advertisement/> */}
-    </Layout>
+    </div>
   )
 }
 

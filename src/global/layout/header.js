@@ -4,10 +4,13 @@ import search from'../../assets/search-outline.png'
 import { Link } from 'react-router-dom';
 import { FaBars } from "react-icons/fa";
 import { useNavigate } from "react-router-dom";
+import { useAuth } from "../../context/ThemeContext";
 
 const Header = () => {
   const navigate= useNavigate();
+  const { isAuthenticated, user, logout}=useAuth();
   
+  console.log("Authentication", isAuthenticated, user)
   const LogOut = () => {
     navigate(`/`)
   }
@@ -33,11 +36,15 @@ const Header = () => {
                 <li><Link to="/blogListing">Blog</Link></li>
                 <li><Link to="/createBlogPage">Create Blog</Link></li>
                 <li><Link to="/authorPage">Contact</Link></li>
+                
+                {/* {isAuthenticated?<li onClick={logout}><Link>LogOut</Link></li>
+                :<li><Link to="/">Login</Link></li>} */}
+                
               </ul>
             </div>
             <div className="nav-search">
               <div className='logout'>
-            <button type="submit" onClick={LogOut}>LogOut</button></div>
+              {isAuthenticated? <button type="submit" onClick={logout}>LogOut</button>: <button type="submit" onClick={LogOut}>LogIn</button>}</div>
               
               <label className="switch">
                 <input type="checkbox" />
@@ -47,7 +54,7 @@ const Header = () => {
                 <input type="checkbox" defaultChecked />
                 <span className="slider round" />
               </label>
-            </div>
+            </div> 
           </nav>
         </div>
       </header>

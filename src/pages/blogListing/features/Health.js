@@ -6,7 +6,7 @@ const Health = () => {
     const [blogs, setBlogs] = useState(null);
     useEffect(() => {
         // axios.get(`http://localhost:4000/get_blogType?blogType=health`)
-          axios.get('http://localhost:4000/get_blogs')
+          axios.get('http://localhost:4000/get_blogType?blogType=health')
         .then(function (response) {
           console.log("All data", response);
           setBlogs(response?.data);

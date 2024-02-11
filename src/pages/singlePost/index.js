@@ -20,10 +20,10 @@ const SinglePost = () => {
  },[])
   console.log("single post data", blogs)
   return (
-    <Layout>
+    <div>
       <TopSinglePost blogs={blogs && blogs}/>
       <BottomSinglePost blogs={blogs && blogs}/>
-    </Layout>
+    </div>
   )
 }
 

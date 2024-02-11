@@ -4,10 +4,10 @@ import Author from './features/author'
 import Layout from '../../global/layout'
 const AuthorPage = () => {
   return (
-    <Layout>
+    <div>
         <Author/>
         {/* <AuthorPosts/> */}
-    </Layout>
+    </div>
   )
 }
 

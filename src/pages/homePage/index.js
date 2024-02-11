@@ -21,12 +21,12 @@ const HomePage = () => {
    {console.log(error)})
  },[])
   return (
-    <Layout >
+    <div >
         <Banner/>
         <Advertisement/>
         <Posts/>
         <Advertisement/>
-    </Layout>
+    </div>
   )
 }
 

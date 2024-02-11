@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
-// import { useAuth } from "../../context/themeContext";
+ import { useAuth } from "../../context/ThemeContext";
 import { Link } from 'react-router-dom';
 import { useNavigate } from "react-router-dom";
 import logo from '../../assets/Logo.png'
@@ -11,8 +11,8 @@ const LoginPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const navigate= useNavigate();
-  // const [status, setStatus] = useState(null);
-  // const auth = useAuth();
+   const [status, setStatus] = useState(null);
+   const {isAuthenticated, user, login } = useAuth();
   // console.log({ auth });
   // console.log({user})
   const userData = {
@@ -24,15 +24,18 @@ const LoginPage = () => {
     axios
       .post("http://localhost:4000/login_user", userData)
       .then(function (res) {
-        // alert(res.data.userData._id);
+         //alert(res.data.userData._id);
         const id = res.data.userData._id;
         console.log("Get Response", id );
+        login(res?.data?.userData)
+        setStatus(res?.data?.msg)
         
         navigate(`/home/${id}`)
         
         
       })
       .catch(function (err) {
+        console.log(err)
         alert(err.response.data.msg)
         // console.log(err.response.data.msg);
       });
@@ -47,6 +50,7 @@ const LoginPage = () => {
     <div className="login_logo"> 
     <img src={logo} alt="logo" /></div>
       <h2>Login to your Blog!</h2>
+      <h2>{status? status: ''}</h2>
       <label htmlFor="login-username">Username:</label>
       <input type="email" value={email} placeholder="Email" onChange={(e) => setEmail(e.target.value)} />
       <label htmlFor="login-password">Password:</label>

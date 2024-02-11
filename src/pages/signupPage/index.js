@@ -27,7 +27,7 @@ const SignUpPage = () => {
         //const id = res.data.userData._id;
         // console.log("Get Response", res);
 
-         navigate(`/LoginPage`)
+         navigate(`/`)
       })
       .catch(function (err) {
         alert(err.response.data.msg);

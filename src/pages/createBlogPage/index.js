@@ -1,7 +1,6 @@
 import React, { useRef, useState } from 'react'
 import ReactQuill from 'react-quill';
 import axios from 'axios';
-import Layout from '../../global/layout'
 
 const CreateBlog = () => {
   const [title, setTitle] = useState('')
@@ -22,21 +21,24 @@ const CreateBlog = () => {
     formData.append("author_name", authorName);
     formData.append("selectedDate", selectedDate.toLocaleDateString());
 
-  const submitBlogFrom = () => {
+  const submitBlogFrom = (e) => {
+    e.preventDefault();
       axios.post('http://localhost:4000/create_blog', formData)
+      
           .then(function (response) {
               console.log(response);
               alert("Blog save Successfully")
           })
           .catch(function (error) {
+            
             alert(error.response.data.msg);
+            //window.location.reload(false)
               console.log(error);
           });
   }
 
 
   return (
-    <Layout>
         <div className='createBlog'>
     <header>
       <h1>Blog Form</h1>
@@ -45,7 +47,8 @@ const CreateBlog = () => {
     <form>
     <label for="cars">Select Type of Blog:</label>
      <select id="blog" name="blog" onChange={(e) => setblogType(e.target.value)}>
-     <option value="business">Business</option>
+     <option >Select</option>
+      <option value="business">Business</option>
       <option value="sports">Sports</option>
       <option value="health">Health</option>
       <option value="science">Science</option>
@@ -78,7 +81,6 @@ const CreateBlog = () => {
 
     </form>
   </div>
-  </Layout>
   )
 }
 
